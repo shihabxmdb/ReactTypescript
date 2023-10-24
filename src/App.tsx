@@ -1,10 +1,8 @@
 import "./App.css";
-import { Greet } from "./components/Greet";
-import { Persion } from "./components/Persion";
-import { PersionList } from "./components/PersionList";
+import { Status } from "./components/Status";
 
 function App() {
-  const name = {
+  /* const name = {
     first: "Shi",
 
     last: "hab",
@@ -22,12 +20,15 @@ function App() {
       first: "bcqq",
       last: "eqq",
     },
-  ];
+  ];*/
   return (
     <div className="App">
-      <Greet name="shihab" messageCount={10} isLogedIn={true} />
+      <Status Status="error" />
+      {/**
+           <Greet name="shihab" messageCount={10} isLogedIn={true} />
       <Persion name={name} />
       <PersionList names={nameList} />
+       */}
     </div>
   );
 }
