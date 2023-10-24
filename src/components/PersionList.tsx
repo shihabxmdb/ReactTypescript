@@ -12,7 +12,6 @@ export const PersionList = (props: nameListProps) => {
         return (
           <div>
             <h2>{name.first}</h2>
-            <h5>{name.last}</h5>
           </div>
         );
       })}
