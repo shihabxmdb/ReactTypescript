@@ -3,15 +3,22 @@ type StateType = {
   count: number;
 };
 type ActionType = {
-  type: string;
+  type: "increment" | "decrement";
   payload: number;
 };
-const reduce = (state: StateType, action: ActionType) => {
+type ActionTypeReset = {
+  type: "reset";
+};
+
+const reduce = (state: StateType, action: ActionType | ActionTypeReset) => {
   if (action.type == "increment") {
     return { count: state.count + action.payload };
   }
   if (action.type == "decrement") {
     return { count: state.count - action.payload };
+  }
+  if (action.type == "reset") {
+    return { count: 0 };
   }
   return state;
 };
@@ -35,6 +42,13 @@ export const Index = () => {
         }}
       >
         -
+      </button>
+      <button
+        onClick={() => {
+          dispatch({ type: "reset" });
+        }}
+      >
+        Reset
       </button>
     </div>
   );
